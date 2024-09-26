@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Slider from "react-slick";
 import image1 from './LzL-25-de-1.jpg';
 import image2 from './LzL-25-de-2.jpg';
 import image3 from './LzL-25-de-3.jpg';
@@ -68,13 +67,6 @@ const App = () => {
     }
   ];
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
