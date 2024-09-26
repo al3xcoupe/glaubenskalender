@@ -1,0 +1,485 @@
+/* Grundlegende Stile für die App */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Stile für den Header */
+.App-header {
+  background: linear-gradient(135deg, #FFCE1D, #f4f4f4);
+  color: black;
+  font-size: x-large;
+  padding: 60px 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil für den Bestellbutton */
+.order-button {
+  padding: 15px 30px; /* Padding für den Button */
+  font-size: 18px; /* Schriftgröße */
+  background-color: #F7D04C; /* Hintergrundfarbe */
+  color: #333; /* Schriftfarbe */
+  border: none; /* Kein Rahmen */
+  border-radius: 30px; /* Abgerundete Ecken */
+  cursor: pointer; /* Zeiger-Cursor */
+  transition: background 0.3s, transform 0.3s; /* Übergänge für Hover-Effekte */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schatten für Tiefe */
+}
+
+.order-button:hover {
+  background-color: #ffd700; /* Etwas dunklere Farbe beim Hover */
+  transform: translateY(-2px); /* Leichtes Anheben beim Hover */
+}
+
+/* Stil für das Bestellformular */
+.order-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+/* Stil für das Formular */
+form {
+  display: grid; /* Grid-Layout für ein modernes Design */
+  gap: 15px; /* Abstand zwischen den Feldern */
+}
+
+/* Stile für die Formgruppen */
+.form-group {
+  width: 100%; /* Vollständige Breite der Formgruppen */
+  padding-right: 10px; /* Abstand nach rechts hinzufügen */
+
+}
+
+/* Labels über den Eingabefeldern */
+label {
+  font-size: 14px; /* Einheitliche Schriftgröße für die Labels */
+  font-weight: bold;
+  color: #333; /* Dunkle Schriftfarbe */
+  display: block; /* Block-Element für die Labels */
+  margin-bottom: 5px; /* Abstand unter dem Label */
+  text-align: left; /* Text linksbündig */
+}
+
+/* Eingabefelder und Auswahlfelder */
+input,
+select {
+  padding: 12px; /* Angemessenes Padding für Eingabefelder */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding-right: 10px; 
+  width: calc(100% - 20px); 
+  font-size: 14px; /* Einheitliche Schriftgröße */
+  transition: border 0.3s, box-shadow 0.3s;
+  text-align: left; /* Text linksbündig */
+
+}
+
+select {
+  width: auto; /* Höhe anpassen, um sicherzustellen, dass es der Höhe der Eingabefelder entspricht */
+  display: block; /* Block-Element, um das Element links auszurichten */
+
+}
+
+/* Stil für die Adresse-Gruppe */
+.address-group {
+  display: flex; /* Flexbox für nebeneinanderliegende Felder */
+  justify-content: flex-start; /* Felder am Anfang ausrichten */
+  margin-bottom: 15px; /* Abstand zwischen der Adresse-Gruppe und dem nächsten Element */
+}
+
+/* Stil für die Adresse-Felder */
+.address-field {
+  margin-right: 10px; /* Abstand zwischen Straße und Nr. */
+}
+
+/* Straße anpassen */
+.address-field:first-child {
+  flex: 0 0 70%; /* 70% Breite für Straße */
+}
+
+/* Hausnummer anpassen */
+.address-field:last-child {
+  flex: 0 0 30%; /* 30% Breite für Nr. */
+}
+
+/* Responsive Design für kleine Bildschirme */
+@media (max-width: 600px) {
+  .address-group {
+    flex-direction: column; /* Felder untereinander bei schmalen Bildschirmen */
+  }
+
+  .address-field {
+    margin-right: 0; /* Kein Abstand bei mobiler Ansicht */
+    margin-bottom: 10px; /* Abstand zwischen den Feldern */
+  }
+
+  .address-field:first-child,
+  .address-field:last-child {
+    flex: 1; /* Vollständige Breite für beide Felder */
+  }
+}
+
+/* Stil für die PLZ- und Ort-Gruppe */
+.address-plz-group {
+  display: flex; /* Flexbox für nebeneinanderliegende Felder */
+  justify-content: flex-start; /* Platz zwischen den Feldern */
+  margin-bottom: 15px; /* Abstand nach unten */
+}
+
+/* PLZ-Feld */
+.address-plz-field {
+  flex: 0 0 30%; /* PLZ-Feld nimmt 70% der Breite ein */
+  margin-right: 10px; /* Abstand nach rechts */
+}
+
+/* Ort-Feld */
+.address-ort-field {
+  flex: 0 0 70%; /* Ort-Feld nimmt 30% der Breite ein */
+}
+
+/* Labels über den Eingabefeldern */
+.address-plz-field label,
+.address-ort-field label {
+  font-size: 14px; /* Einheitliche Schriftgröße für die Labels */
+  font-weight: bold;
+  color: #333; /* Dunkle Schriftfarbe */
+  display: block; /* Block-Element für die Labels */
+  margin-bottom: 5px; /* Abstand unter dem Label */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .address-plz-group {
+    flex-direction: column; /* Felder untereinander bei schmalen Bildschirmen */
+  }
+
+  .address-plz-field,
+  .address-ort-field {
+    width: 100%; /* Vollständige Breite bei mobiler Ansicht */
+    margin-right: 0; /* Kein Abstand bei mobiler Ansicht */
+    margin-bottom: 10px; /* Abstand zwischen den Feldern in mobiler Ansicht */
+  }
+}
+
+
+
+/* Fokuszustand für Eingabefelder */
+input:focus,
+select:focus {
+  border: 1px solid #FFCE1D;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 206, 29, 0.5);
+}
+
+
+/* Stil für die grüne Erfolgsbox */
+.success-message {
+  padding: 20px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Box für die Kalenderbeschreibung */
+.description-box {
+  background-color: #FFF8E1;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.description-box h3 {
+  margin-top: 0;
+}
+
+.more-info-button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #FFCE1D;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.more-info-button:hover {
+  background-color: #FFD700;
+  color: white;
+}
+
+
+.faq-container {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Weicherer Schatten für moderne Tiefe */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.faq-item {
+  margin-bottom: 30px; /* Mehr Abstand zwischen den FAQs */
+  padding: 20px 0; /* Mehr Abstand innerhalb der FAQ-Elemente */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Dezente Trennlinie */
+}
+
+.faq-item:last-child {
+  border-bottom: none; /* Keine Linie beim letzten Item */
+}
+
+.faq-question {
+  font-size: 22px; /* Etwas größere Schrift für Fragen */
+  font-weight: bold;
+  color: #333;
+  display: flex; /* Flexbox zur besseren Anordnung */
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative; /* Für die Dekorationseffekte */
+}
+
+.faq-question::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #F7D04C; /* Goldener Punkt für visuelles Highlight */
+  border-radius: 50%;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  text-align: left;
+  padding-left: 18px; /* Leichte Einrückung für eine elegante Optik */
+  transition: color 0.3s ease-in-out;
+}
+
+.faq-item:hover .faq-answer {
+  color: #333; /* Dunkler beim Hover */
+}
+
+.faq-item:hover {
+  background-color: #f1f1f1; /* Leichter Hover-Effekt */
+  border-radius: 10px; /* Abgerundete Kanten beim Hover */
+}
+
+
+
+/* Stil für die Überschrift */
+.faq-box h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 600px) {
+  .faq-item {
+    padding: 15px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+  }
+
+  .faq-box h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .order-form {
+    padding: 20px;
+  }
+
+  .order-button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+  }
+
+  button[type='submit'] {
+    width: 100%;
+  }
+
+  /* Flexbox-Anpassungen für mobile Geräte */
+  .address-group {
+    flex-direction: column; /* Felder untereinander bei schmalen Bildschirmen */
+  }
+
+  .address-field {
+    margin-right: 0; /* Kein Abstand bei mobiler Ansicht */
+    width: 100%; /* Vollständige Breite bei mobiler Ansicht */
+  }
+
+  .success-message {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .order-button {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    font-size: 12px;
+  }
+
+  button[type='submit'] {
+    font-size: 14px;
+  }
+
+  .success-message {
+    font-size: 14px;
+  }
+}
+
+/* Grundlegende Stile für die App */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Slider-Stile */
+.slider-container {
+  display: flex; /* Flexbox für Layout */
+  align-items: center; /* Zentriert die Bilder vertikal */
+  justify-content: center; /* Zentriert die Bilder horizontal */
+  margin: 20px auto; /* Zentriert den Slider */
+}
+
+.slider-button {
+  background-color: transparent; /* Hintergrund transparent */
+  border: none; /* Kein Rahmen */
+  font-size: 30px; /* Größe der Pfeile */
+  cursor: pointer; /* Zeigt den Zeiger bei Hover */
+  margin: 0 10px; /* Abstand zwischen Button und Bild */
+}
+
+.slider-image-container {
+  max-width: 600px; /* Maximale Breite des Bildcontainers */
+  overflow: hidden; /* Versteckt überlaufende Bilder */
+}
+
+.slider-image {
+  width: 100%; /* Bildbreite auf 100% setzen */
+  max-height: 300px; /* Maximale Höhe der Bilder */
+  height: auto; /* Höhe automatisch anpassen */
+  border-radius: 10px; /* Abgerundete Ecken für die Bilder */
+  object-fit: cover; /* Bilder so zuschneiden, dass sie den Container ausfüllen */
+  display: block; /* Sicherstellen, dass die Bilder als Blockelemente dargestellt werden */
+  cursor: pointer; /* Zeiger-Cursor für Bilder */ 
+}
+
+/* Stile für das Header */
+.App h1 {
+  color: #333; /* Textfarbe für die Überschrift */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .slider-container {
+    flex-direction: column; /* Bild und Buttons untereinander bei kleinen Bildschirmen */
+  }
+
+  .slider-button {
+    font-size: 24px; /* Kleinere Pfeile auf mobilen Geräten */
+  }
+
+  .slider-image {
+    max-height: 200px; /* Anpassung der maximalen Höhe für mobile Geräte */
+  }
+}
+
+.slider-image:hover {
+  opacity: 0.8; /* Leichte Transparenz bei Hover */
+  transform: scale(1.05); /* Leicht vergrößern bei Hover */
+  transition: transform 0.3s, opacity 0.3s; /* Sanfter Übergang */
+}
+
+.modal {
+  display: flex; /* Flexbox für zentriertes Layout */
+  position: fixed; /* Fixiert das Modal auf dem Bildschirm */
+  z-index: 1000; /* Z-Index für Überlagerung */
+  left: 0;
+  top: 0;
+  width: 100%; /* Volle Breite */
+  height: 100%; /* Volle Höhe */
+  background-color: rgba(0, 0, 0, 0.8); /* Dunkler Hintergrund */
+  justify-content: center; /* Horizontale Zentrierung */
+  align-items: center; /* Vertikale Zentrierung */
+}
+
+.modal-content {
+  max-width: 90%; /* Maximale Breite des Bildes */
+  max-height: 90%; /* Maximale Höhe des Bildes */
+  border-radius: 10px; /* Abgerundete Ecken */
+}
+
+.close {
+  position: absolute; /* Positionierung des Schließen-Buttons */
+  top: 20px;
+  right: 30px;
+  color: white; /* Farbe des Schließen-Buttons */
+  font-size: 40px; /* Größe des Schließen-Buttons */
+  cursor: pointer; /* Zeiger bei Hover */
+}
+
+.slider-instructions {
+  margin-top: 10px; /* Abstand nach oben */
+  font-size: 14px; /* Schriftgröße */
+  color: #333; /* Farbe des Textes */
+  text-align: center; /* Zentriere den Text */
+}
+
+.highlighted-text {
+  text-decoration: underline; /* Unterstreichung */
+  cursor: pointer; /* Zeiger-Cursor beim Hover */
+  background-color: #F7D04C; /* Helle Hintergrundfarbe für die Markierung */
+  padding: 2px 4px; /* Kleines Padding für die Markierung */
+  border-radius: 3px; /* Abgerundete Ecken für die Markierung */
+}

@@ -1,38 +1,409 @@
+/* Grundlegende Stile für die App */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Stile für den Header */
+.App-header {
+  background: linear-gradient(135deg, #FFCE1D, #f4f4f4);
+  color: black;
+  font-size: x-large;
+  padding: 60px 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil für die Überschrift */
+.App h1 {
+  color: #333; /* Textfarbe für die Überschrift */
+}
+
+/* Slider-Stile */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.slider-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.slider-image-container {
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.slider-image {
+  width: 100%;
+  max-height: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.slider-image:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.slider-instructions {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Stil für den Bestellbutton */
+.order-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #F7D04C;
+  color: #333;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.order-button:hover {
+  background-color: #ffd700;
+  transform: translateY(-2px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Stil für das Bestellformular */
+.order-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+/* Stile für die Formgruppen */
+.form-group {
+  width: 100%;
+}
+
+/* Labels über den Eingabefeldern */
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Eingabefelder und Auswahlfelder */
+input,
+select {
+  padding: 12px 10px; /* Padding für Eingabefelder */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: calc(100% - 20px);
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+select {
+  width: auto;
+  display: block;
+}
+
+/* Stil für die PLZ- und Ort-Gruppe */
+.address-plz-group,
+.address-group-2 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+}
+
+.address-plz-field {
+  flex: 0 0 30%;
+  margin-right: 10px;
+}
+
+.address-ort-field {
+  flex: 0 0 70%;
+}
+
+.address-field-str1{
+  flex: 0 0 70%;
+  margin-right: 10px;
+}
+
+.address-field-nr {
+  flex: 0 0 30%;
+}
+
+/* Fokuszustand für Eingabefelder */
+input:focus,
+select:focus {
+  border: 1px solid #FFCE1D;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 206, 29, 0.5);
+}
+
+/* Stil für die grüne Erfolgsbox */
+.success-message {
+  padding: 20px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Box für die Kalenderbeschreibung */
+.description-box {
+  background-color: #FFF8E1;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.description-box h3 {
+  margin-top: 0;
+}
+
+.more-info-button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #FFCE1D;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.more-info-button:hover {
+  background-color: #FFD700;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* FAQ-Stile */
+.faq-container {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.faq-item {
+  margin-bottom: 30px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.faq-question::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #F7D04C;
+  border-radius: 50%;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  text-align: left;
+  padding-left: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.faq-item:hover .faq-answer {
+  color: #333;
+}
+
+.faq-item:hover {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Stil für die FAQ-Überschrift */
+.faq-box h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .address-plz-group,
+  .address-group-2 {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+
+  .address-plz-field,
+  .address-ort-field,
+  .address-field-str1,
+  .address-field-nr {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .address-field-nr {
+    margin-bottom: 10px;
+
+
+ }
+  .order-form {
+    padding: 20px;
+  }
+
+  .order-button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+  }
+
+  button[type='submit'] {
+    width: 100%;
+  }
+
+  .slider-container {
+    flex-direction: column;
+  }
+
+  .slider-button {
+    font-size: 24px;
+  }
+
+  .slider-image {
+    max-height: 200px;
+  }
+
+  .success-message {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .order-button {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    font-size: 12px;
+  }
+
+  button[type='submit'] {
+    font-size: 14px;
+  }
+
+  .success-message {
+    font-size: 14px;
+  }
+}
+
+/* Modal-Stile */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Hervorgehobener Text */
+.highlighted-text {
+  text-decoration: underline; /* Unterstreichung */
+  cursor: pointer; /* Zeiger-Cursor beim Hover */
+  background-color: #F7D04C; /* Helle Hintergrundfarbe für die Markierung */
+  padding: 2px 4px; /* Kleines Padding für die Markierung */
+  border-radius: 3px; /* Abgerundete Ecken für die Markierung */
+}
+
+/* Weitere Stile */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+
+@media (max-width: 600px) {
+  .slider-container {
+    height: auto; /* Höhe anpassen für kleinere Bildschirme */
+  }
+
+  .slide img {
+    width: 100%; /* Bilder responsive machen */
+    height: auto; /* Höhe proportional halten */
   }
 }
